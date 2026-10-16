@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="card">
+    <h1>Cadastrar livro</h1>
+    <form method="post" action="{{ url_for('novo_livro') }}">
+      <label for="titulo">Título</label>
+      <input id="titulo" name="titulo" type="text" required>
+
+      <label for="usuario_id">Usuário</label>
+      <select id="usuario_id" name="usuario_id" required>
+        <option value="">Selecione um usuário</option>
+        {% for usuario in usuarios %}
+          <option value="{{ usuario.id }}">{{ usuario.nome }}</option>
+        {% endfor %}
+      </select>
+
+      <button type="submit">Salvar</button>
+    </form>
+  </div>
+{% endblock %}

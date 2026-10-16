@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Biblioteca</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; background: #f7f7f7; }
+      nav { margin-bottom: 1.5rem; }
+      nav a { margin-right: 1rem; text-decoration: none; color: #0b5fff; }
+      .card { background: white; border-radius: 8px; padding: 1rem 1.25rem; box-shadow: 0 2px 10px rgba(0,0,0,0.06); margin-bottom: 1rem; }
+      label { display: block; margin-bottom: 0.5rem; }
+      input, select { width: 100%; max-width: 300px; padding: 0.55rem; margin-bottom: 1rem; }
+      button { padding: 0.6rem 1rem; cursor: pointer; }
+      ul { padding-left: 1.2rem; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('index') }}">Início</a>
+      <a href="{{ url_for('novo_usuario') }}">Novo usuário</a>
+      <a href="{{ url_for('novo_livro') }}">Novo livro</a>
+    </nav>
+
+    {% block content %}{% endblock %}
+  </body>
+</html>

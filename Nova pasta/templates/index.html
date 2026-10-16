@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="card">
+    <h1>Biblioteca</h1>
+  </div>
+
+  <div class="card">
+    <h2>Usuários</h2>
+    {% if usuarios %}
+      <ul>
+        {% for usuario in usuarios %}
+          <li>{{ usuario.nome }} — {{ usuario.email }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Nenhum usuário cadastrado.</p>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <h2>Livros</h2>
+    {% if livros %}
+      <ul>
+        {% for livro in livros %}
+          <li>{{ livro.titulo }} — Usuário: {{ livro.user.nome }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Nenhum livro cadastrado.</p>
+    {% endif %}
+  </div>
+{% endblock %}
